@@ -18,6 +18,7 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import GoogleLoginForm from '../GoogleLoginForm';
 import GlobalStyle from '../../global-styles';
+import SavedImages from '../SavedImages';
 
 const AppWrapper = styled.div`
   margin: 0;
@@ -43,6 +44,7 @@ export default function App() {
           <GoogleLoginForm setToken={setToken} token={token} />
         </Route>
         <Route path="/features" component={FeaturePage} />
+        <Route path="/saved" component={SavedImages} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />

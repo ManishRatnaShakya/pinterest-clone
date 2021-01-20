@@ -8,6 +8,7 @@ import { ACTION_GET_IMAGES } from './constants';
 
 export const initialState = {
   images: [],
+  saved: [],
   loading: false,
   error: '',
 };
@@ -26,6 +27,14 @@ const homepageReducer = (state = initialState, action) =>
         return {
           loading: false,
           images: action.images,
+          error: '',
+        };
+
+      case ACTION_GET_IMAGES.SAVE_IMAGES:
+        return {
+          loading: false,
+          images: action.images,
+          saved: action.id,
           error: '',
         };
       case ACTION_GET_IMAGES.GET_IMAGES_ERROR:

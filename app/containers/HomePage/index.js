@@ -23,6 +23,7 @@ import './Style.css';
 import ImageDisplay from './ImageDisplay';
 import { history } from 'utils/history';
 import GoogleLoginForm from '../GoogleLoginForm';
+import { ACTION_GET_IMAGES } from './constants';
 // import { useHistory } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 export function Homepage(props) {
@@ -31,9 +32,6 @@ export function Homepage(props) {
   useInjectSaga({ key: 'homepage', saga });
   console.log('from index', props.homepage);
 
-  if (!props.token) {
-    // history.push('/login');
-  }
   useEffect(() => {
     props.onFetch();
   }, []);
@@ -63,6 +61,7 @@ const mapStateToProps = createStructuredSelector({
 function mapDispatchToProps(dispatch) {
   return {
     onFetch: () => dispatch(images()),
+
     dispatch,
   };
 }

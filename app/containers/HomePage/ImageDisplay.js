@@ -1,16 +1,23 @@
 import React from 'react';
 import { useState } from 'react';
 import './Style.css';
-function ImageDisplay({ image }) {
+function ImageDisplay({ image, onSave }) {
   const [save, setSave] = useState(false);
+  const saveImage = id => {};
   return (
     <div
       className="img"
       onMouseOver={() => setSave(true)}
-      onMouseOut={() => setSave(false)}
+      onMouseLeave={() => setSave(false)}
     >
       <img src={image.urls.small} className="images" />
-      {save ? <button className="btn">save</button> : ''}
+      {save ? (
+        <button className="btn" onClick={onSave}>
+          save
+        </button>
+      ) : (
+        ''
+      )}
     </div>
   );
 }

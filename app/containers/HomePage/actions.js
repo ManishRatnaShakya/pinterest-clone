@@ -17,6 +17,11 @@ export const getImages = () => ({
   type: ACTION_GET_IMAGES.GET_IMAGES,
 });
 
+export const saveImages = id =>
+  console.log('hello from on sace')({
+    type: ACTION_GET_IMAGES.SAVE_IMAGES,
+    id,
+  });
 export const getImagesSuccess = images => ({
   type: ACTION_GET_IMAGES.GET_IMAGES_SUCCESS,
   images,
